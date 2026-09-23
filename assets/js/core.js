@@ -110,12 +110,11 @@
   function siteHeaderHTML() {
     var s = Stk.session();
     var sign = s ? '<a class="btn btn-sm btn-signin" href="' + Stk.dashFor(s) + '">' + ICON('fa-gauge-high') + '<span>Dashboard</span></a>' : '<a class="btn btn-sm btn-signin" href="login.html">' + ICON('fa-right-to-bracket') + '<span>Sign in</span></a>';
-    return '<header class="site-header" id="siteHeader"><div class="hdr-progress"></div><div class="wrap">' +
-      '<div class="hdr-row"><div class="hdr-left"></div>' +
-      '<a class="hdr-logo" href="index.html" aria-label="Stackly home"><img src="assets/img/logo_white.webp" alt="Stackly" width="192" height="56"></a>' +
+    return '<header class="site-header" id="siteHeader"><div class="hdr-progress"></div><div class="wrap"><div class="hdr-row">' +
+      '<div class="hdr-left"><a class="hdr-logo" href="index.html" aria-label="Stackly home"><img src="assets/img/logo_white.webp" alt="Stackly" width="192" height="56"></a></div>' +
+      '<nav class="hdr-nav" aria-label="Main navigation"><ul>' + navLinks('d') + '</ul></nav>' +
       '<div class="hdr-right">' + sign +
-      '<button class="burger" type="button" data-open="menu" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button></div></div></div>' +
-      '<nav class="hdr-nav" aria-label="Main navigation"><div class="wrap"><ul>' + navLinks('d') + '</ul></div></nav></header>';
+      '<button class="burger" type="button" data-open="menu" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button></div></div></div></header>';
   }
   function menuHTML() {
     var s = Stk.session();
@@ -125,8 +124,8 @@
       '<div class="sheet-head"><img src="assets/img/logo_white.webp" alt="Stackly" width="192" height="56"><button class="sheet-close" type="button" data-close aria-label="Close menu">' + ICON('fa-xmark') + '</button></div>' +
       '<div class="sheet-body"><ul class="m-list" role="list">' + navLinks('m') + '</ul>' +
       '<div class="m-actions">' + act + '</div>' +
-      '<div class="m-contact"><div>' + ICON('fa-phone-volume') + ' 7010792745</div><div>' + ICON('fa-envelope') + ' hello@stackly.city</div><div>' + ICON('fa-location-dot') + ' MMR Complex, Periyakollappatty, Salem</div></div>' +
-      '<div class="ft-social">' + SOCIAL.map(function (s2) { return '<a href="404.html" aria-label="' + s2.n + '"><i class="' + s2.i + '"></i></a>'; }).join('') + '</div></div></aside>';
+      '<div class="m-contact"><div>' + ICON('fa-phone-volume') + ' 7010792745</div><div>' + ICON('fa-envelope') + ' hello@stackly.city</div></div>' +
+      '</div></div></aside>';
   }
   function drawerHTML(kind) {
     var title = kind === 'cart' ? 'Your cart' : 'Your wishlist', ic = kind === 'cart' ? 'fa-cart-shopping' : 'fa-heart';
