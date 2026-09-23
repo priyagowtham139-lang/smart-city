@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-page="user-dashboard">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My dashboard | Stackly Smart City</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="user-dashboard" data-chrome="app" data-role="user">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<div class="dash dash-user" id="dash">
+<main id="main" class="dash-content">
+
+<!-- OVERVIEW -->
+<section class="dpanel" id="overview" data-title="Overview" data-icon="fa-gauge-high">
+  <div class="card hello">
+    <div><h2>Good day, <span data-user-first>Citizen</span></h2><p>Here is what is happening with your city services today.</p></div>
+    <div class="btn-row"><a class="btn btn-gold btn-sm" href="#bills"><i class="fa-solid fa-credit-card"></i>Pay bills</a><a class="btn btn-glass btn-sm" href="#requests"><i class="fa-solid fa-circle-plus"></i>New request</a></div>
+  </div>
+  <div class="live">
+    <div class="card kpi c3"><div class="top"><span>Bills due</span><i class="fa-solid fa-file-invoice-dollar"></i></div><b data-bind="due">$0</b><span class="delta dn"><i class="fa-solid fa-clock"></i><span data-bind="dueCount">0</span> pending</span></div>
+    <div class="card kpi c3"><div class="top"><span>Open requests</span><i class="fa-solid fa-ticket"></i></div><b data-bind="openReq">0</b><span class="delta"><i class="fa-solid fa-circle-check"></i>Tracked live</span></div>
+    <div class="card kpi c3"><div class="top"><span>Energy this month</span><i class="fa-solid fa-bolt"></i></div><b>214 kWh</b><span class="delta"><i class="fa-solid fa-arrow-trend-down"></i>12% lower than June</span></div>
+    <div class="card kpi c3"><div class="top"><span>Water this month</span><i class="fa-solid fa-droplet"></i></div><b>9.8 kL</b><span class="delta"><i class="fa-solid fa-arrow-trend-down"></i>4% lower than June</span></div>
+    <div class="card c8"><div class="panel-h"><h3>Your energy use, last 12 days (kWh)</h3></div><div class="chart" id="uEnergy"></div></div>
+    <div class="card c4"><div class="panel-h"><h3>Spending by service</h3></div><div class="donut-wrap" style="grid-template-columns:minmax(0,1fr)"><div id="uSpend"></div><div class="donut-list"><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#38d5f5"></i>Transport</span><b>$62</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#ffc857"></i>Energy</span><b>$48</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#7b8cff"></i>Water</span><b>$21</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#5eead4"></i>Waste</span><b>$9</b></div></div></div></div>
+    <div class="card c6"><div class="panel-h"><h3>Coming up</h3></div><ul class="dl"><li><span class="ic g"><i class="fa-solid fa-droplet"></i></span><div><b>Water bill due</b><small>28 September 2026</small></div><span class="pill gold">$21</span></li><li><span class="ic"><i class="fa-solid fa-train-subway"></i></span><div><b>Metro pass renews</b><small>In 6 days, auto-renew on</small></div><span class="pill">$32</span></li><li><span class="ic m"><i class="fa-solid fa-recycle"></i></span><div><b>Bulky waste pickup</b><small>Tuesday, 8:00 to 12:00</small></div><span class="pill green">Booked</span></li></ul></div>
+    <div class="card c6"><div class="panel-h"><h3>City alerts near you</h3></div><ul class="dl"><li><span class="ic r"><i class="fa-solid fa-triangle-exclamation"></i></span><div><b>Planned power work, Greenfield</b><small>Thursday 10:00 to 13:00</small></div><span class="pill red">Alert</span></li><li><span class="ic"><i class="fa-solid fa-road"></i></span><div><b>Lane closure on Ring Road</b><small>Use Metro Line 1 as an alternative</small></div><span class="pill">Info</span></li><li><span class="ic m"><i class="fa-solid fa-wind"></i></span><div><b>Air quality is good today</b><small>AQI 42 in your district</small></div><span class="pill green">Good</span></li></ul></div>
+  </div>
+</section>
+
+<!-- MY SERVICES -->
+<section class="dpanel" id="services" data-title="My services" data-icon="fa-layer-group">
+  <div class="grid g3" id="mySvc"></div>
+  <a class="btn btn-ghost" style="width:fit-content" href="services.html#marketplace"><i class="fa-solid fa-store"></i>Add services from the marketplace</a>
+</section>
+
+<!-- BILLS -->
+<section class="dpanel" id="bills" data-title="Bills and payments" data-icon="fa-credit-card">
+  <div class="grid g3">
+    <div class="card kpi"><div class="top"><span>Total due</span><i class="fa-solid fa-file-invoice-dollar"></i></div><b data-bind="due">$0</b></div>
+    <div class="card kpi"><div class="top"><span>Paid this year</span><i class="fa-solid fa-circle-check"></i></div><b data-bind="paid">$0</b></div>
+    <div class="card kpi"><div class="top"><span>Auto-pay</span><i class="fa-solid fa-rotate"></i></div><b>Enabled</b></div>
+  </div>
+  <div class="card"><div class="panel-h"><h3>All bills</h3></div><table class="tbl"><thead><tr><th>Bill</th><th>Period</th><th>Amount</th><th>Due date</th><th>Status</th><th></th></tr></thead><tbody id="billRows"></tbody></table></div>
+</section>
+
+<!-- REQUESTS -->
+<section class="dpanel" id="requests" data-title="Service requests" data-icon="fa-ticket">
+  <div class="split" style="align-items:start">
+    <div class="card"><div class="panel-h"><h3>Raise a new request</h3></div>
+      <form id="reqForm" novalidate>
+        <div class="field"><label for="rType">Category</label><div class="inp"><i class="fa-solid fa-list li"></i><select id="rType" required><option value="">Select a category</option><option>Streetlight or road fault</option><option>Water or drainage</option><option>Electricity fault</option><option>Waste collection</option><option>Certificate or permit</option><option>Other</option></select><i class="fa-solid fa-chevron-down sel-i"></i></div><span class="msg">Please choose a category.</span></div>
+        <div class="field"><label for="rText">Describe the issue</label><div class="inp ta"><i class="fa-solid fa-message li"></i><textarea id="rText" placeholder="Where is it, and what is happening?" required></textarea></div><span class="msg">Please add a short description.</span></div>
+        <button class="btn btn-block" type="submit"><i class="fa-solid fa-paper-plane"></i>Submit request</button>
+      </form>
+    </div>
+    <div class="card"><div class="panel-h"><h3>My requests</h3></div><ul class="dl" id="reqList"></ul></div>
+  </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="dpanel" id="transport" data-title="Live transport" data-icon="fa-bus">
+  <div class="split" style="align-items:start">
+    <div class="card"><div class="panel-h"><h3>Arrivals near Civic Square</h3><span class="pill green"><i class="fa-solid fa-circle"></i>Live</span></div><div class="grid" id="busList" style="gap:12px"></div></div>
+    <div class="card"><div class="panel-h"><h3>Route 42 map</h3></div>
+      <svg class="route-svg" viewBox="0 0 520 260" role="img" aria-label="Route 42 from Riverside to Civic Square">
+        <path class="ln" d="M40 200 C 120 200, 130 90, 230 90 S 380 170, 480 60"/>
+        <path class="ln2" d="M40 200 C 120 200, 130 90, 230 90 S 380 170, 480 60"/>
+        <circle class="st" cx="40" cy="200" r="9"/><circle class="st" cx="230" cy="90" r="9"/><circle class="st" cx="480" cy="60" r="9"/>
+        <text x="20" y="232">Riverside</text><text x="196" y="66">Civic Square</text><text x="420" y="40">Airport</text>
+        <g><rect x="-16" y="-10" width="32" height="20" rx="6" fill="#ffc857"/><circle cx="-8" cy="11" r="4" fill="#050c1f"/><circle cx="8" cy="11" r="4" fill="#050c1f"/>
+        <animateMotion dur="9s" repeatCount="indefinite" path="M40 200 C 120 200, 130 90, 230 90 S 380 170, 480 60"/></g>
+      </svg>
+      <p class="muted" style="margin:10px 0 0;font-size:.9rem">Positions are simulated for this demonstration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="dpanel" id="profile" data-title="Profile and settings" data-icon="fa-user-gear">
+  <div class="split" style="align-items:start">
+    <div class="card"><div class="panel-h"><h3>Personal details</h3></div>
+      <form id="profForm" novalidate>
+        <div class="field"><label for="pName">Full name</label><div class="inp"><i class="fa-solid fa-user li"></i><input id="pName" type="text" required></div><span class="msg">Please enter your name.</span></div>
+        <div class="field"><label for="pEmail">Email</label><div class="inp"><i class="fa-solid fa-envelope li"></i><input id="pEmail" type="email" readonly></div></div>
+        <div class="field"><label for="pPhone">Phone</label><div class="inp"><i class="fa-solid fa-phone li"></i><input id="pPhone" type="tel" placeholder="+00 000 000 0000"></div></div>
+        <div class="field"><label for="pPass">New password</label><div class="inp pw"><i class="fa-solid fa-lock li"></i><input id="pPass" type="password" placeholder="Leave blank to keep current" autocomplete="new-password"><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div></div>
+        <button class="btn" type="submit"><i class="fa-solid fa-floppy-disk"></i>Save changes</button>
+      </form>
+    </div>
+    <div class="card"><div class="panel-h"><h3>Notifications</h3></div>
+      <div class="set-row"><div><b>Bill reminders</b><small>Three days before a due date</small></div><label class="sw"><input type="checkbox" checked aria-label="Bill reminders"><span></span></label></div>
+      <div class="set-row"><div><b>Outage alerts</b><small>Power and water in your district</small></div><label class="sw"><input type="checkbox" checked aria-label="Outage alerts"><span></span></label></div>
+      <div class="set-row"><div><b>Request updates</b><small>When a status changes</small></div><label class="sw"><input type="checkbox" checked aria-label="Request updates"><span></span></label></div>
+      <div class="set-row"><div><b>City bulletin</b><small>Weekly email digest</small></div><label class="sw"><input type="checkbox" aria-label="City bulletin"><span></span></label></div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

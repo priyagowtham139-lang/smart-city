@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-page="contact">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact | Stackly Smart City</title>
+<meta name="description" content="Contact the Stackly Smart City Authority: helpline, email, department directory, office address, opening hours and emergency numbers.">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="contact">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="sec p-hero" id="hero" data-shapes="hex,ring,plus,tri" data-circuit>
+  <div class="wrap split">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb" data-anim="down"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a><i class="fa-solid fa-chevron-right sep"></i><span>Contact</span></nav>
+      <h1 data-anim="up" data-d="80">We are here, <span class="grad">every working day</span></h1>
+      <p class="lead" data-anim="up" data-d="180">Call, write, visit or chat. Every message gets a reference number and a named officer, and urgent matters go to the front of the queue.</p>
+      <div class="hero-mini" data-anim="up" data-d="280"><span class="pill green"><i class="fa-solid fa-circle"></i>Helpline open now</span><span class="pill"><i class="fa-solid fa-stopwatch"></i>Reply within 1 working day</span></div>
+    </div>
+    <div data-anim="zoom" data-d="150"><div data-obj="cube" data-icons="fa-phone-volume,fa-envelope,fa-location-dot,fa-comments,fa-clock,fa-globe"></div></div>
+  </div>
+</section>
+
+<!-- 2. CHANNELS -->
+<section class="sec bg2 cut-tr cut-b pat-grid" id="channels" data-shapes="hex,diamond,dots,ring">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Choose how to reach us</h2>
+      <p class="lead">Four ways to get help. All of them create the same trackable ticket.</p>
+    </div>
+    <div class="grid g4 spot-grid" data-stagger="ud" data-step="100">
+      <article class="card lift spot channel"><div class="icon-box"><i class="fa-solid fa-phone-volume"></i></div><h3>Citizen helpline</h3><a class="big" href="tel:7010792745">7010792745</a><p>Mon to Sat, 9:00 to 18:00.</p></article>
+      <article class="card lift spot channel"><div class="icon-box ic-gold"><i class="fa-solid fa-envelope"></i></div><h3>Email</h3><a class="big" href="mailto:hello@stackly.city">hello@stackly.city</a><p>Attach photos or documents. We reply within one working day.</p></article>
+      <article class="card lift spot channel"><div class="icon-box ic-mint"><i class="fa-solid fa-comments"></i></div><h3>Live chat</h3><a class="big" href="login.html">Sign in to chat</a><p>Chat with a service officer from your citizen dashboard.</p></article>
+      <article class="card lift spot channel"><div class="icon-box ic-red"><i class="fa-solid fa-building-columns"></i></div><h3>Visit in person</h3><a class="big" href="#visit">Salem office</a><p>MMR Complex, Periyakollappatty, Chinna Thirupathi. No appointment needed.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. FORM -->
+<section class="sec light cut-t cut-br pat-dots" id="form" data-shapes="tri,ring,plus,hex">
+  <div class="wrap split" style="align-items:start">
+    <div class="card" data-anim="left" style="padding:clamp(24px,4vw,40px)">
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Send us a message</h2>
+      <p class="muted">Fields marked with an asterisk are required.</p>
+      <form data-form novalidate>
+        <div class="form-row">
+          <div class="field"><label for="cName">Full name *</label><div class="inp"><i class="fa-solid fa-user li"></i><input id="cName" name="name" type="text" placeholder="Your full name" autocomplete="name" data-alpha-only required></div><span class="msg">Please enter your name.</span></div>
+          <div class="field"><label for="cEmail">Email *</label><div class="inp"><i class="fa-solid fa-envelope li"></i><input id="cEmail" name="email" type="email" placeholder="you@gmail.com" autocomplete="email" data-gmail-only required></div><span class="msg">Enter a valid email address.</span></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="cPhone">Phone</label><div class="inp"><i class="fa-solid fa-phone li"></i><input id="cPhone" name="phone" type="tel" placeholder="Optional" autocomplete="tel"></div></div>
+          <div class="field"><label for="cDept">Topic *</label><div class="inp"><i class="fa-solid fa-list li"></i><select id="cDept" name="dept" required><option value="">Select a topic</option><option>Transport and parking</option><option>Electricity and water</option><option>Health services</option><option>Permits and certificates</option><option>Partnerships and careers</option><option>Other</option></select><i class="fa-solid fa-chevron-down sel-i"></i></div><span class="msg">Please choose a topic.</span></div>
+        </div>
+        <div class="field"><label for="cMsg">Message *</label><div class="inp ta"><i class="fa-solid fa-message li"></i><textarea id="cMsg" name="message" placeholder="How can we help?" required></textarea></div><span class="msg">Please tell us how we can help.</span></div>
+        <div class="field"><label class="chk"><input type="checkbox" required><span>I agree that Stackly may use these details to respond to my request.</span></label><span class="msg">Please accept to continue.</span></div>
+        <button class="btn btn-block" type="submit"><i class="fa-solid fa-paper-plane"></i>Send message</button>
+      </form>
+      <div class="success-box"><div class="ok"><i class="fa-solid fa-check"></i></div><h3>Message received</h3><p>Your reference number is <b>STK-26-48213</b>. A service officer will reply within one working day.</p><a class="btn btn-ghost" href="index.html"><i class="fa-solid fa-house"></i>Back to home</a></div>
+    </div>
+    <div data-anim="right">
+      <h2>What happens next</h2>
+      <ul class="check-list">
+        <li><i class="fa-solid fa-ticket"></i><span><b>You get a reference number</b>Use it to track progress from your citizen dashboard.</span></li>
+        <li><i class="fa-solid fa-user-check"></i><span><b>A named officer is assigned</b>You always know who is handling your request.</span></li>
+        <li><i class="fa-solid fa-bell"></i><span><b>Updates at every step</b>By email or SMS, whichever you prefer.</span></li>
+        <li><i class="fa-solid fa-arrow-up-right-dots"></i><span><b>Automatic escalation</b>If a deadline is missed, a supervisor is alerted.</span></li>
+      </ul>
+      <div class="form-note"><i class="fa-solid fa-lock"></i><span>Your details are encrypted and used only to answer your request. This demo form does not send data anywhere.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DEPARTMENTS -->
+<section class="sec mesh cut-tr cut-b pat-hex" id="departments" data-shapes="cube,hex,plus,ring">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Department directory</h2>
+      <p class="lead">Go straight to the right team. Pick a department to see its contact details.</p>
+    </div>
+    <div class="tabs center" style="margin-bottom:clamp(24px,4vw,40px)" data-tabs="#deptBox" role="tablist" aria-label="Departments" data-anim="up">
+      <button class="tab on" type="button" data-tab="transport" role="tab" aria-selected="true"><i class="fa-solid fa-bus"></i>Transport</button>
+      <button class="tab" type="button" data-tab="utilities" role="tab" aria-selected="false"><i class="fa-solid fa-bolt"></i>Utilities</button>
+      <button class="tab" type="button" data-tab="health" role="tab" aria-selected="false"><i class="fa-solid fa-heart-pulse"></i>Health</button>
+      <button class="tab" type="button" data-tab="civic" role="tab" aria-selected="false"><i class="fa-solid fa-file-signature"></i>Civic</button>
+      <button class="tab" type="button" data-tab="careers" role="tab" aria-selected="false"><i class="fa-solid fa-briefcase"></i>Careers</button>
+    </div>
+    <div class="card" id="deptBox" data-anim="zoom" style="padding:clamp(24px,4vw,44px)">
+      <div class="dept-panel on split" data-panel="transport"><div class="media prod-media"><img class="zoom" src="assets/transport.webp" alt="Transport and mobility network" width="800" height="500" loading="lazy"></div><div><h3>Transport and Mobility</h3><p class="muted">Bus, metro, parking permits, cycle lanes and traffic signal faults.</p></div><div class="info"><div><i class="fa-solid fa-phone"></i><span>1800-555-0121<small>Mon to Sat, 6:00 to 22:00</small></span></div><div><i class="fa-solid fa-envelope"></i><span>transport@stackly.city<small>Reply within 1 working day</small></span></div><div><i class="fa-solid fa-location-dot"></i><span>Block B, Civic Square<small>Second floor</small></span></div></div></div>
+      <div class="dept-panel split" data-panel="utilities"><div class="media prod-media"><img class="zoom" src="assets/energy_and_water.webp" alt="Energy and water network" width="800" height="500" loading="lazy"></div><div><h3>Energy and Water</h3><p class="muted">Connections, meters, billing queries, outages and leak reports.</p></div><div class="info"><div><i class="fa-solid fa-phone"></i><span>1800-555-0131<small>24 hours for outages</small></span></div><div><i class="fa-solid fa-envelope"></i><span>utilities@stackly.city<small>Reply within 1 working day</small></span></div><div><i class="fa-solid fa-location-dot"></i><span>Block C, Civic Square<small>Ground floor</small></span></div></div></div>
+      <div class="dept-panel split" data-panel="health"><div class="media prod-media"><img class="zoom" src="assets/health_services.webp" alt="Health services hub" width="800" height="500" loading="lazy"></div><div><h3>Health Services</h3><p class="muted">Clinic bookings, health cards, vaccination drives and records support.</p></div><div class="info"><div><i class="fa-solid fa-phone"></i><span>1800-555-0141<small>Mon to Sat, 8:00 to 20:00</small></span></div><div><i class="fa-solid fa-envelope"></i><span>health@stackly.city<small>Reply within 1 working day</small></span></div><div><i class="fa-solid fa-location-dot"></i><span>Digital Health Hub<small>North Wing</small></span></div></div></div>
+      <div class="dept-panel split" data-panel="civic"><div class="media prod-media"><img class="zoom" src="assets/civic_services.webp" alt="Civic services help desk" width="800" height="500" loading="lazy"></div><div><h3>Civic Services</h3><p class="muted">Certificates, licences, property tax and grievance follow-ups.</p></div><div class="info"><div><i class="fa-solid fa-phone"></i><span>1800-555-0151<small>Mon to Sat, 9:00 to 18:00</small></span></div><div><i class="fa-solid fa-envelope"></i><span>civic@stackly.city<small>Reply within 1 working day</small></span></div><div><i class="fa-solid fa-location-dot"></i><span>Main Hall, Civic Square<small>Walk-in help desk</small></span></div></div></div>
+      <div class="dept-panel split" data-panel="careers"><div class="media prod-media"><img class="zoom" src="assets/Careers_and_Partnerships.webp" alt="Careers and partnerships team" width="800" height="500" loading="lazy"></div><div><h3>Careers and Partnerships</h3><p class="muted">Join the team, pilot a project in the sandbox or propose a partnership.</p></div><div class="info"><div><i class="fa-solid fa-phone"></i><span>1800-555-0161<small>Mon to Fri, 10:00 to 17:00</small></span></div><div><i class="fa-solid fa-envelope"></i><span>partners@stackly.city<small>Reply within 3 working days</small></span></div><div><i class="fa-solid fa-location-dot"></i><span>Innovation Lab, Level 4<small>By appointment</small></span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. VISIT -->
+<section class="sec bg3 cut-t cut-br pat-diag" id="visit" data-shapes="hex,ring,tri,dots">
+  <div class="wrap split" style="align-items:start">
+    <div data-anim="left">
+      <h2>Visit the Salem office</h2>
+      <p class="lead">Stackly Smart City Authority<br>MMR Complex, Periyakollappatty, Chinna Thirupathi<br>Salem, Tamil Nadu 636008</p>
+      <ul class="hours" data-hours>
+        <li data-day="1"><span>Monday</span><b>9:00 to 18:00</b></li>
+        <li data-day="2"><span>Tuesday</span><b>9:00 to 18:00</b></li>
+        <li data-day="3"><span>Wednesday</span><b>9:00 to 18:00</b></li>
+        <li data-day="4"><span>Thursday</span><b>9:00 to 18:00</b></li>
+        <li data-day="5"><span>Friday</span><b>9:00 to 18:00</b></li>
+        <li data-day="6"><span>Saturday</span><b>9:00 to 14:00</b></li>
+        <li data-day="0"><span>Sunday</span><b>Closed</b></li>
+      </ul>
+      <div class="btn-row" style="margin-top:22px"><span class="pill"><i class="fa-solid fa-location-dot"></i>Chinna Thirupathi, Salem</span><span class="pill gold"><i class="fa-solid fa-universal-access"></i>Step-free access</span></div>
+    </div>
+    <div class="mapbox" data-anim="right">
+      <iframe class="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616098770783!2d78.17140487505539!3d11.682956588526356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1790130500565!5m2!1sen!2sin" title="Map showing Stackly City office near Salem" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 6. EMERGENCY + HELP -->
+<section class="sec light cut-tr pat-dots" id="help" data-shapes="tri,ring,plus,hex">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Emergency and fault numbers</h2>
+      <p class="lead">Save these in your phone. All lines are toll free and staffed around the clock.</p>
+    </div>
+  </div>
+  <div class="marq" style="--dur:44s;--gap:18px" data-anim="up"><div class="marq-track">
+    <span class="sos"><i class="fa-solid fa-shield"></i><span><b>1800-555-0100</b><small>Police control room</small></span></span>
+    <span class="sos"><i class="fa-solid fa-fire-flame-curved"></i><span><b>1800-555-0101</b><small>Fire and rescue</small></span></span>
+    <span class="sos"><i class="fa-solid fa-truck-medical"></i><span><b>1800-555-0108</b><small>Ambulance</small></span></span>
+    <span class="sos"><i class="fa-solid fa-cloud-showers-heavy"></i><span><b>1800-555-0070</b><small>Disaster desk</small></span></span>
+    <span class="sos"><i class="fa-solid fa-faucet-drip"></i><span><b>1800-555-0116</b><small>Water leak</small></span></span>
+    <span class="sos"><i class="fa-solid fa-bolt"></i><span><b>1800-555-0119</b><small>Power fault</small></span></span>
+  </div></div>
+  <div class="wrap">
+    <div class="grid g3" style="margin-top:clamp(36px,5vw,60px)" data-stagger="lr">
+      <div class="card lift"><div class="icon-box"><i class="fa-solid fa-circle-question"></i></div><h3>Common questions</h3><p>Answers on accounts, payments and data protection.</p><a class="more" href="services.html#faq">Read the FAQ <i class="fa-solid fa-chevron-right"></i></a></div>
+      <div class="card lift"><div class="icon-box ic-gold"><i class="fa-solid fa-store"></i></div><h3>Service marketplace</h3><p>Passes, plans and starter kits for city services.</p><a class="more" href="services.html#marketplace">Open marketplace <i class="fa-solid fa-chevron-right"></i></a></div>
+      <div class="card lift"><div class="icon-box ic-mint"><i class="fa-solid fa-gauge-high"></i></div><h3>Your dashboard</h3><p>Track requests, pay bills and manage your profile.</p><a class="more" href="login.html">Sign in <i class="fa-solid fa-chevron-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

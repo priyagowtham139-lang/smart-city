@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 56" width="48" height="56" role="img" aria-label="Stackly"><g transform="translate(0 0) scale(1)">
+<defs><linearGradient id="aM" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38d5f5"/><stop offset="1" stop-color="#7b8cff"/></linearGradient>
+<linearGradient id="bM" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7b8cff"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+<linearGradient id="cM" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc857"/><stop offset="1" stop-color="#ff9f43"/></linearGradient></defs>
+<path d="M24 4 44 15 24 26 4 15Z" fill="url(#aM)"/>
+<path d="M4 24 24 35 44 24 44 28 24 39 4 28Z" fill="url(#bM)" opacity=".95"/>
+<path d="M4 37 24 48 44 37 44 41 24 52 4 41Z" fill="url(#cM)"/>
+<path d="M24 9.5 34 15 24 20.5 14 15Z" fill="#fff" opacity=".35"/></g></svg>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-page="sustainability">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sustainability | Stackly Smart City</title>
+<meta name="description" content="Stackly's path to a net-zero city: emission targets, renewable energy, live air quality, water and waste data, and a citizen green pledge.">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="sustainability">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="sec p-hero" id="hero" data-shapes="hex,ring,tri,dots" data-circuit>
+  <div class="wrap split">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb" data-anim="down"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a><i class="fa-solid fa-chevron-right sep"></i><span>Sustainability</span></nav>
+      <h1 data-anim="up" data-d="80">Net-zero by 2035, <span class="grad">measured in the open</span></h1>
+      <p class="lead" data-anim="up" data-d="180">Clean energy, clean air and less waste are tracked with the same live sensors that run the city. Every number here can be checked against open data.</p>
+      <div class="btn-row" data-anim="up" data-d="280"><a class="btn" href="#pledge"><i class="fa-solid fa-hand-holding-heart"></i>Take the pledge</a><a class="btn btn-ghost" href="#air"><i class="fa-solid fa-wind"></i>Check air quality</a></div>
+    </div>
+    <div data-anim="zoom" data-d="150"><div data-obj="globe" data-icons="fa-leaf,fa-solar-panel,fa-droplet"></div></div>
+  </div>
+</section>
+
+<!-- 2. TARGETS -->
+<section class="sec bg2 cut-tr cut-b pat-rings" id="targets" data-shapes="ring,plus,hex,diamond">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Progress against our 2030 targets</h2>
+      <p class="lead">Rings fill to show how far each target has come. Numbers are audited every year by an independent body.</p>
+    </div>
+    <div class="grid g4" data-stagger="flipx" data-step="110">
+      <div class="card ring-card lift"><div class="ring" style="--v:62;--rc:#38d5f5"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50"/></svg><b>62%</b></div><h3>Carbon reduction</h3><p>Towards a 50% cut in emissions per resident</p></div>
+      <div class="card ring-card lift"><div class="ring" style="--v:58;--rc:#ffc857"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50"/></svg><b>58%</b></div><h3>Renewable power</h3><p>Share of electricity from solar and wind</p></div>
+      <div class="card ring-card lift"><div class="ring" style="--v:72;--rc:#5eead4"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50"/></svg><b>72%</b></div><h3>Waste recycled</h3><p>Households segregating waste at source</p></div>
+      <div class="card ring-card lift"><div class="ring" style="--v:24;--rc:#4ade80"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50"/></svg><b>24%</b></div><h3>Tree canopy</h3><p>City area under tree cover, target 33%</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ENERGY + VIDEO -->
+<section class="sec bg3 cut-t cut-br" id="energy" data-shapes="tri,hex,ring,plus">
+  <div class="wrap">
+    <div class="split">
+      <div class="vid" data-anim="left">
+        <img src="assets/Powering_the_city_from_the_sky.webp" alt="Wind turbines turning above rolling hills at sunrise">
+        <div class="vid-live"><b></b>Wind and solar</div>
+      </div>
+      <div data-anim="right">
+        <h2>Powering the city from the sky</h2>
+        <p class="lead">Rooftop solar, wind farms beyond the ring road and neighbourhood batteries now cover more than half of daytime demand.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-solar-panel"></i><span><b>410 MW of solar installed</b>Across 9,000 rooftops and 14 community fields.</span></li>
+          <li><i class="fa-solid fa-car-battery"></i><span><b>220 MWh of storage</b>Batteries shift midday sun into the evening peak.</span></li>
+          <li><i class="fa-solid fa-plug-circle-bolt"></i><span><b>Net metering for all</b>Residents earn credits for surplus power sent to the grid.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:clamp(28px,4vw,48px)" data-anim="up"><div class="panel-h"><h3>Monthly solar generation (MW average)</h3><div class="legend"><span><i style="--c:#ffc857"></i>2026</span><span><i style="--c:#7b8cff"></i>2025</span></div></div><div class="chart" id="solarChart"></div></div>
+  </div>
+</section>
+
+<!-- 4. AIR QUALITY -->
+<section class="sec light cut-tr cut-b pat-dots" id="air" data-shapes="ring,hex,plus,tri">
+  <div class="wrap split" style="align-items:start">
+    <div data-anim="left">
+      <span class="tag is-live"><i class="fa-solid fa-circle"></i>Air monitor</span>
+      <h2>Breathe easy: today's air, street by street</h2>
+      <p class="lead">Two hundred sensors report pollutants every minute. Values shown are a sample feed for this demonstration.</p>
+      <div class="card" style="margin-top:20px">
+        <div class="aq-row"><span>PM2.5</span><div class="meter" style="--v:26%;--mc:linear-gradient(90deg,#34d399,#38d5f5)"><i></i></div><b>13</b></div>
+        <div class="aq-row"><span>PM10</span><div class="meter" style="--v:34%;--mc:linear-gradient(90deg,#34d399,#38d5f5)"><i></i></div><b>27</b></div>
+        <div class="aq-row"><span>Nitrogen dioxide</span><div class="meter" style="--v:41%;--mc:linear-gradient(90deg,#38d5f5,#ffc857)"><i></i></div><b>21</b></div>
+        <div class="aq-row"><span>Ozone</span><div class="meter" style="--v:52%;--mc:linear-gradient(90deg,#38d5f5,#ffc857)"><i></i></div><b>48</b></div>
+        <div class="aq-row" style="margin-bottom:0"><span>Carbon monoxide</span><div class="meter" style="--v:12%;--mc:linear-gradient(90deg,#34d399,#38d5f5)"><i></i></div><b>0.4</b></div>
+      </div>
+    </div>
+    <div data-anim="right">
+      <div class="card center"><div class="panel-h" style="justify-content:center"><h3>City air quality index</h3></div><div id="aqiGauge"></div><p style="margin:14px 0 0"><span class="pill green"><i class="fa-solid fa-circle-check"></i>Good</span> Safe for all outdoor activity</p></div>
+      <div class="grid g2" style="margin-top:20px;gap:14px" data-stagger="up">
+        <div class="card" style="padding:18px"><small class="muted">Riverside</small><div style="font-family:var(--font-h);font-size:1.5rem;font-weight:800;color:var(--head)">38 <span class="pill green" style="vertical-align:middle">Good</span></div></div>
+        <div class="card" style="padding:18px"><small class="muted">Old Town</small><div style="font-family:var(--font-h);font-size:1.5rem;font-weight:800;color:var(--head)">57 <span class="pill gold" style="vertical-align:middle">Fair</span></div></div>
+        <div class="card" style="padding:18px"><small class="muted">Greenfield</small><div style="font-family:var(--font-h);font-size:1.5rem;font-weight:800;color:var(--head)">29 <span class="pill green" style="vertical-align:middle">Good</span></div></div>
+        <div class="card" style="padding:18px"><small class="muted">Harbour Ward</small><div style="font-family:var(--font-h);font-size:1.5rem;font-weight:800;color:var(--head)">46 <span class="pill green" style="vertical-align:middle">Good</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WATER, WASTE, EMISSIONS -->
+<section class="sec mesh cut-t cut-br pat-hex" id="resources" data-shapes="cube,ring,diamond,plus">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Using less water, wasting less</h2>
+      <p class="lead">Two circular systems, one goal: give back more than we take.</p>
+    </div>
+    <div class="compare">
+      <article class="card lift" data-anim="left"><div class="media prod-media"><img class="zoom" src="assets/water_security.webp" alt="Water security network protecting the city supply" width="800" height="500" loading="lazy"></div><h3>Water security</h3><p>Leakage in the network fell from 34% to 12% in five years. Treated wastewater now irrigates every public park.</p><div style="margin-top:20px"><div class="prog-meta" style="margin:0 0 6px"><span>Network leakage</span><span>12%</span></div><div class="prog"><i style="--v:12%"></i></div><div class="prog-meta" style="margin:14px 0 6px"><span>Wastewater reused</span><span>63%</span></div><div class="prog"><i style="--v:63%"></i></div></div></article>
+      <article class="card lift" data-anim="right"><div class="media prod-media"><img class="zoom" src="assets/Zero-landfill_waste.webp" alt="Zero-landfill waste with smart bins" width="800" height="500" loading="lazy"></div><h3>Zero-landfill waste</h3><p>Smart bins signal when they are full, cutting collection trips by a third. Organic waste becomes compost and biogas.</p><div style="margin-top:20px"><div class="prog-meta" style="margin:0 0 6px"><span>Waste diverted from landfill</span><span>72%</span></div><div class="prog"><i style="--v:72%"></i></div><div class="prog-meta" style="margin:14px 0 6px"><span>Organic waste composted</span><span>58%</span></div><div class="prog"><i style="--v:58%"></i></div></div></article>
+    </div>
+    <div class="card" style="margin-top:clamp(20px,3vw,32px)" data-anim="up"><div class="panel-h"><h3>City emissions (kilotonnes CO2e)</h3></div><div class="chart" id="co2Chart"></div></div>
+  </div>
+</section>
+
+<!-- 6. PLEDGE -->
+<section class="sec light cut-tr pat-diag" id="pledge" data-shapes="tri,hex,ring,plus">
+  <div class="wrap">
+    <div class="cta" data-anim="zoom">
+      <div class="cta-shade"></div>
+      <div class="split">
+        <div>
+          <h2>Take the green pledge</h2>
+          <p class="lead">Promise one small habit for the next thirty days. Together, small habits become tonnes of carbon saved.</p>
+          <div class="pledge-count grad-warm" id="pledgeCount" aria-live="polite">18,420</div>
+          <p class="lead" style="margin:6px 0 22px">residents have already pledged</p>
+          <button class="btn btn-gold" type="button" data-pledge="#pledgeCount"><i class="fa-solid fa-hand-holding-heart"></i>I pledge</button>
+        </div>
+        <div class="grid g2" data-stagger="up" style="gap:14px">
+          <div class="card" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff"><div class="icon-box"><i class="fa-solid fa-person-walking"></i></div><h3 style="color:#fff">Walk or ride</h3><p style="color:#cbd9f6">Swap one short car trip a day.</p></div>
+          <div class="card" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff"><div class="icon-box ic-gold"><i class="fa-solid fa-plug"></i></div><h3 style="color:#fff">Unplug standby</h3><p style="color:#cbd9f6">Switch off idle devices at night.</p></div>
+          <div class="card" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff"><div class="icon-box ic-mint"><i class="fa-solid fa-bowl-food"></i></div><h3 style="color:#fff">Compost food</h3><p style="color:#cbd9f6">Send food scraps to the green bin.</p></div>
+          <div class="card" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff"><div class="icon-box ic-ind"><i class="fa-solid fa-tree"></i></div><h3 style="color:#fff">Plant a tree</h3><p style="color:#cbd9f6">Adopt a sapling in your ward.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

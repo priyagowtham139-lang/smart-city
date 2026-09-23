@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-page="login">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sign in | Stackly Smart City</title>
+<meta name="description" content="Sign in or create a Stackly account to reach your citizen dashboard or the administrator console.">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="login" data-chrome="none">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<main id="main">
+<section class="sec auth mesh pat-grid" id="auth" data-shapes="hex,ring,plus,cube,tri" data-circuit>
+  <div class="wrap auth-grid">
+
+    <div class="auth-aside" data-anim="left">
+      <h1>Your city account, <span class="grad">one secure sign-in</span></h1>
+      <p class="lead">Pay bills, track requests and manage your services from a single dashboard. Administrators use the console to run city operations.</p>
+      <ul class="check-list">
+        <li><i class="fa-solid fa-fingerprint"></i><span><b>Protected by design</b>Encrypted sessions and strict role-based access.</span></li>
+        <li><i class="fa-solid fa-gauge-high"></i><span><b>Live dashboards</b>Requests, bills and city data updated as they happen.</span></li>
+        <li><i class="fa-solid fa-mobile-screen"></i><span><b>Works everywhere</b>Phone, tablet or desktop with the same account.</span></li>
+      </ul>
+      <div class="auth-scene"><div data-obj="gyro" data-icons="fa-lock"></div></div>
+    </div>
+
+    <div class="auth-card card" data-anim="right" data-d="120">
+      <div id="signedIn" class="signed" hidden>
+        <i class="fa-solid fa-circle-user"></i>
+        <div><b>You are signed in</b><small id="signedAs"></small></div>
+        <a class="btn btn-sm" id="signedGo" href="user-dashboard.html">Open dashboard</a>
+        <button class="btn btn-sm btn-ghost" type="button" data-logout>Sign out</button>
+      </div>
+
+      <div class="tabs auth-mode" role="tablist" aria-label="Sign in or sign up" data-mode="signin">
+        <button class="tab on" type="button" role="tab" id="tabIn" aria-selected="true" aria-controls="paneIn"><i class="fa-solid fa-right-to-bracket"></i>Sign in</button>
+        <button class="tab" type="button" role="tab" id="tabUp" aria-selected="false" aria-controls="paneUp"><i class="fa-solid fa-user-plus"></i>Sign up</button>
+      </div>
+
+      <!-- SIGN IN -->
+      <div id="paneIn" class="pane on" role="tabpanel" aria-labelledby="tabIn">
+        <h2>Welcome back</h2>
+        <p class="muted" style="margin-bottom:18px">Choose your role, then sign in.</p>
+        <div class="seg" role="radiogroup" aria-label="Sign in as" data-role="user">
+          <button type="button" role="radio" aria-checked="true" data-role-btn="user" class="on"><i class="fa-solid fa-user"></i>User</button>
+          <button type="button" role="radio" aria-checked="false" data-role-btn="admin"><i class="fa-solid fa-user-shield"></i>Admin</button>
+        </div>
+        <form id="formIn" novalidate>
+          <div class="field"><label for="inEmail">Email address</label><div class="inp"><i class="fa-solid fa-envelope li"></i><input id="inEmail" type="email" placeholder="you@gmail.com" autocomplete="username" inputmode="email" data-gmail-only required></div><span class="msg" data-msg>Only Gmail addresses are allowed.</span></div>
+          <div class="field"><label for="inPass">Password</label><div class="inp pw"><i class="fa-solid fa-lock li"></i><input id="inPass" type="password" placeholder="Your password" autocomplete="current-password" required><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div><span class="msg" data-msg>Password must be at least 6 characters.</span></div>
+          <div class="row-between"><label class="chk"><input type="checkbox" id="remember"><span>Remember me</span></label><a href="#" id="forgot" class="link">Forgot password?</a></div>
+          <div class="form-error" id="inError" role="alert" hidden></div>
+          <button class="btn btn-block" type="submit" id="inBtn"><i class="fa-solid fa-right-to-bracket"></i><span>Sign in as User</span></button>
+        </form>
+        <button class="btn btn-ghost btn-block btn-sm demo" type="button" id="demoFill"><i class="fa-solid fa-wand-magic-sparkles"></i>Fill demo credentials</button>
+        <p class="demo-note"><i class="fa-solid fa-circle-info"></i><span>Demo accounts: <b>user.demo@gmail.com</b> / User@123 and <b>admin.demo@gmail.com</b> / Admin@123</span></p>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="paneUp" class="pane" role="tabpanel" aria-labelledby="tabUp">
+        <h2>Create your account</h2>
+        <p class="muted" style="margin-bottom:18px">Citizen accounts are free. Administrator accounts are issued by the authority.</p>
+        <form id="formUp" novalidate>
+          <div class="field"><label for="upName">Full name</label><div class="inp"><i class="fa-solid fa-user li"></i><input id="upName" type="text" placeholder="Your full name" autocomplete="name" data-alpha-only required></div><span class="msg" data-msg>Please enter your name.</span></div>
+          <div class="field"><label for="upEmail">Email address</label><div class="inp"><i class="fa-solid fa-envelope li"></i><input id="upEmail" type="email" placeholder="you@gmail.com" autocomplete="email" inputmode="email" data-gmail-only required></div><span class="msg" data-msg>Enter a valid email address.</span></div>
+          <div class="field"><label for="upPass">Password</label><div class="inp pw"><i class="fa-solid fa-lock li"></i><input id="upPass" type="password" placeholder="At least 8 characters" autocomplete="new-password" required><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div>
+            <div class="strength" id="strength" aria-live="polite"><i></i><i></i><i></i><i></i><span>Enter a password</span></div><span class="msg" data-msg>Use at least 8 characters.</span></div>
+          <div class="field"><label for="upPass2">Confirm password</label><div class="inp pw"><i class="fa-solid fa-shield-halved li"></i><input id="upPass2" type="password" placeholder="Repeat your password" autocomplete="new-password" required><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div><span class="msg" data-msg>Passwords do not match.</span></div>
+          <div class="field"><label class="chk"><input type="checkbox" id="upTerms"><span>I agree to the terms of use and privacy notice.</span></label><span class="msg" data-msg>Please accept the privacy policy and terms and conditions.</span></div>
+          <div class="form-error" id="upError" role="alert" hidden></div>
+          <button class="btn btn-block" type="submit" id="upBtn"><i class="fa-solid fa-user-plus"></i><span>Create account</span></button>
+        </form>
+        <p class="demo-note" style="margin-top:16px"><i class="fa-solid fa-circle-info"></i><span>Already registered? <a href="#signin" class="link" data-switch="signin">Sign in instead</a></span></p>
+      </div>
+
+      <a class="btn btn-ghost btn-sm btn-block go-home" href="index.html"><i class="fa-solid fa-house"></i>Go back home</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

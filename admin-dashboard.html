@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-page="admin-dashboard">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin console | Stackly Smart City</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="admin-dashboard" data-chrome="app" data-role="admin">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<div class="dash dash-admin" id="dash">
+<main id="main" class="dash-content">
+
+<!-- OVERVIEW -->
+<section class="dpanel" id="overview" data-title="Operations overview" data-icon="fa-gauge-high">
+  <div class="card hello">
+    <div><h2>City operations, <span data-user-first>Admin</span></h2><p>Live summary of users, requests and infrastructure health.</p></div>
+    <div class="btn-row"><a class="btn btn-gold btn-sm" href="#requests"><i class="fa-solid fa-ticket"></i>Open requests</a><a class="btn btn-glass btn-sm" href="#sensors"><i class="fa-solid fa-microchip"></i>View sensors</a></div>
+  </div>
+  <div class="live">
+    <div class="card kpi c3"><div class="top"><span>Registered users</span><i class="fa-solid fa-users"></i></div><b data-count="24318">0</b><span class="delta"><i class="fa-solid fa-arrow-trend-up"></i>3.4% this month</span><div data-spark="20,21,21.5,22,22.4,23,23.4,23.8,24.3" data-color="#38d5f5"></div></div>
+    <div class="card kpi c3"><div class="top"><span>Open requests</span><i class="fa-solid fa-ticket"></i></div><b data-bind="adminOpen">0</b><span class="delta dn"><i class="fa-solid fa-clock"></i>7 near deadline</span><div data-spark="40,46,42,50,48,44,52,47,41" data-color="#ffc857"></div></div>
+    <div class="card kpi c3"><div class="top"><span>Revenue this month</span><i class="fa-solid fa-sack-dollar"></i></div><b data-count="1.82" data-dec="2" data-prefix="$" data-suffix="M">0</b><span class="delta"><i class="fa-solid fa-arrow-trend-up"></i>8.1% vs August</span><div data-spark="1.2,1.3,1.35,1.5,1.55,1.6,1.7,1.75,1.82" data-color="#5eead4"></div></div>
+    <div class="card kpi c3"><div class="top"><span>Sensors online</span><i class="fa-solid fa-microchip"></i></div><b data-count="12480">0</b><span class="delta"><i class="fa-solid fa-circle-check"></i>98.9% of 12,610</span><div data-spark="98,98.4,98.2,98.8,99,98.7,98.9,99,98.9" data-color="#7b8cff"></div></div>
+    <div class="card c8"><div class="panel-h"><h3>Requests received and resolved (last 12 days)</h3><div class="legend"><span><i style="--c:#38d5f5"></i>Received</span><span><i style="--c:#5eead4"></i>Resolved</span></div></div><div class="chart" id="aReq"></div></div>
+    <div class="card c4"><div class="panel-h"><h3>Requests by status</h3></div><div class="donut-wrap" style="grid-template-columns:minmax(0,1fr)"><div id="aStatus"></div><div class="donut-list"><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#ffc857"></i>Open</span><b data-bind="stOpen">0</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#38d5f5"></i>In progress</span><b data-bind="stProg">0</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#5eead4"></i>Resolved</span><b data-bind="stDone">0</b></div></div></div></div>
+    <div class="card c12"><div class="panel-h"><h3>Live activity</h3><span class="pill green"><i class="fa-solid fa-circle"></i>Streaming</span></div><ul class="dl feed" id="feed"></ul></div>
+  </div>
+</section>
+
+<!-- USERS -->
+<section class="dpanel" id="users" data-title="User management" data-icon="fa-users">
+  <div class="card">
+    <div class="tbar">
+      <div class="inp"><i class="fa-solid fa-magnifying-glass li"></i><input id="uSearch" type="search" placeholder="Search name or email" aria-label="Search users"></div>
+      <div class="inp" style="flex:0 1 200px;min-width:160px"><i class="fa-solid fa-filter li"></i><select id="uRole" aria-label="Filter by role"><option value="all">All roles</option><option value="user">Citizens</option><option value="admin">Admins</option></select><i class="fa-solid fa-chevron-down sel-i"></i></div>
+    </div>
+    <table class="tbl"><thead><tr><th>User</th><th>Role</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead><tbody id="userRows"></tbody></table>
+  </div>
+</section>
+
+<!-- ANALYTICS -->
+<section class="dpanel" id="analytics" data-title="City analytics" data-icon="fa-chart-line">
+  <div class="live">
+    <div class="card c8"><div class="panel-h"><h3>Portal visits (thousands per week)</h3></div><div class="chart" id="aVisits"></div></div>
+    <div class="card c4"><div class="panel-h"><h3>Citizen satisfaction</h3></div><div id="aSat"></div><p class="muted center" style="margin:10px 0 0">Based on 8,412 responses</p></div>
+    <div class="card c6"><div class="panel-h"><h3>Service usage (thousands)</h3></div><div class="chart" id="aUsage"></div></div>
+    <div class="card c6"><div class="panel-h"><h3>Channels</h3></div><div class="donut-wrap"><div id="aChan"></div><div class="donut-list"><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#38d5f5"></i>Web portal</span><b>48%</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#ffc857"></i>Mobile app</span><b>36%</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#7b8cff"></i>Kiosks</span><b>10%</b></div><div><span style="display:flex;gap:10px;align-items:center"><i style="--c:#5eead4"></i>SMS</span><b>6%</b></div></div></div></div>
+  </div>
+</section>
+
+<!-- REQUESTS -->
+<section class="dpanel" id="requests" data-title="Service requests" data-icon="fa-ticket">
+  <div class="card">
+    <div class="tbar"><div class="tabs" data-filters="#reqTable" role="group" aria-label="Filter by status">
+      <button class="tab on" type="button" data-filter="all" aria-pressed="true">All</button><button class="tab" type="button" data-filter="open" aria-pressed="false">Open</button><button class="tab" type="button" data-filter="progress" aria-pressed="false">In progress</button><button class="tab" type="button" data-filter="done" aria-pressed="false">Resolved</button></div></div>
+    <div id="reqTable" class="filterable"><table class="tbl"><thead><tr><th>Ref</th><th>Category</th><th>District</th><th>Priority</th><th>Status</th></tr></thead><tbody id="aReqRows"></tbody></table></div>
+  </div>
+</section>
+
+<!-- SENSORS -->
+<section class="dpanel" id="sensors" data-title="Sensor network" data-icon="fa-microchip">
+  <div class="grid g4" id="sensorGrid"></div>
+</section>
+
+<!-- SETTINGS -->
+<section class="dpanel" id="settings" data-title="Platform settings" data-icon="fa-sliders">
+  <div class="split" style="align-items:start">
+    <div class="card"><div class="panel-h"><h3>Platform controls</h3></div>
+      <div class="set-row"><div><b>Maintenance mode</b><small>Show a notice on the public site</small></div><label class="sw"><input type="checkbox" data-setting="maint" aria-label="Maintenance mode"><span></span></label></div>
+      <div class="set-row"><div><b>Email alerts for admins</b><small>Critical sensor and security events</small></div><label class="sw"><input type="checkbox" data-setting="alerts" checked aria-label="Email alerts"><span></span></label></div>
+      <div class="set-row"><div><b>Two-factor sign-in</b><small>Require a code for admin accounts</small></div><label class="sw"><input type="checkbox" data-setting="twofa" checked aria-label="Two-factor sign-in"><span></span></label></div>
+      <div class="set-row"><div><b>Publish open data</b><small>Share anonymised datasets daily</small></div><label class="sw"><input type="checkbox" data-setting="opendata" checked aria-label="Publish open data"><span></span></label></div>
+    </div>
+    <div class="card"><div class="panel-h"><h3>Administrator password</h3></div>
+      <form id="adminPassForm" novalidate>
+        <div class="field"><label for="apCur">Current password</label><div class="inp pw"><i class="fa-solid fa-lock li"></i><input id="apCur" type="password" autocomplete="current-password"><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div></div>
+        <div class="field"><label for="apNew">New password</label><div class="inp pw"><i class="fa-solid fa-key li"></i><input id="apNew" type="password" autocomplete="new-password"><button class="pw-btn" type="button" data-pw aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye"></i></button></div><span class="msg">Use at least 8 characters.</span></div>
+        <button class="btn" type="submit"><i class="fa-solid fa-floppy-disk"></i>Update password</button>
+      </form>
+      <div class="set-row" style="margin-top:22px"><div><b>Reset demo data</b><small>Clears users, requests and settings in this browser</small></div><button class="btn btn-ghost btn-sm" type="button" id="resetDemo"><i class="fa-solid fa-rotate-left"></i>Reset</button></div>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

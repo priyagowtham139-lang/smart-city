@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-page="services">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Services | Stackly Smart City</title>
+<meta name="description" content="Mobility, energy, water, safety, health and e-governance services from the Stackly Smart City Authority, plus a marketplace of city service passes.">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="services">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="sec p-hero" id="hero" data-shapes="hex,cube,plus,ring" data-circuit>
+  <div class="wrap split">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb" data-anim="down"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a><i class="fa-solid fa-chevron-right sep"></i><span>Services</span></nav>
+      <h1 data-anim="up" data-d="80">Services for every part of <span class="grad">city life</span></h1>
+      <p class="lead" data-anim="up" data-d="180">Move, power your home, stay safe, see a doctor or renew a licence. Every service shares one account and one live status page.</p>
+      <div class="btn-row" data-anim="up" data-d="280"><a class="btn" href="404.html"><i class="fa-solid fa-store"></i>Open marketplace</a><a class="btn btn-ghost" href="404.html"><i class="fa-solid fa-diagram-project"></i>How it works</a></div>
+    </div>
+    <div data-anim="zoom" data-d="150"><div data-obj="gyro" data-icons="fa-layer-group"></div></div>
+  </div>
+</section>
+
+<!-- 2. CATEGORIES -->
+<section class="sec bg2 cut-tr cut-b pat-grid" id="categories" data-shapes="hex,tri,dots,arc">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>Choose a service area</h2>
+      <p class="lead">Filter by topic. Cards react to your pointer and open the matching service in your account.</p>
+    </div>
+    <div class="tabs center" style="margin-bottom:clamp(28px,4vw,44px)" data-filters="#svcGrid" role="group" aria-label="Filter services" data-anim="up">
+      <button class="tab on" type="button" data-filter="all" aria-pressed="true"><i class="fa-solid fa-table-cells-large"></i>All</button>
+      <button class="tab" type="button" data-filter="mobility" aria-pressed="false"><i class="fa-solid fa-bus"></i>Mobility</button>
+      <button class="tab" type="button" data-filter="utilities" aria-pressed="false"><i class="fa-solid fa-bolt"></i>Utilities</button>
+      <button class="tab" type="button" data-filter="safety" aria-pressed="false"><i class="fa-solid fa-shield-halved"></i>Safety</button>
+      <button class="tab" type="button" data-filter="care" aria-pressed="false"><i class="fa-solid fa-heart-pulse"></i>Care</button>
+      <button class="tab" type="button" data-filter="civic" aria-pressed="false"><i class="fa-solid fa-file-signature"></i>Civic</button>
+    </div>
+    <div class="grid g3 spot-grid filterable" id="svcGrid" data-stagger="ud" data-step="100">
+      <article class="card lift spot svc-card" id="mobility" data-cat="mobility"><div class="icon-box"><i class="fa-solid fa-bus"></i></div><h3>Smart mobility</h3><p>Live arrivals, one ticket for bus, metro and bikes, and parking you can reserve before you leave.</p><ul><li><i class="fa-solid fa-circle"></i>Real-time bus and metro tracking</li><li><i class="fa-solid fa-circle"></i>Reserved and pay-by-plate parking</li><li><i class="fa-solid fa-circle"></i>Bike and EV charging maps</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+      <article class="card lift spot svc-card" id="energy" data-cat="utilities"><div class="icon-box ic-gold"><i class="fa-solid fa-bolt"></i></div><h3>Energy and utilities</h3><p>See usage by the hour, get outage alerts and sell surplus rooftop solar back to the grid.</p><ul><li><i class="fa-solid fa-circle"></i>Hourly smart-meter insights</li><li><i class="fa-solid fa-circle"></i>Outage and restoration alerts</li><li><i class="fa-solid fa-circle"></i>Solar net-metering</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+      <article class="card lift spot svc-card" id="water" data-cat="utilities"><div class="icon-box ic-mint"><i class="fa-solid fa-droplet"></i></div><h3>Water management</h3><p>Reliable supply, published quality results and automatic alerts when your meter detects a leak.</p><ul><li><i class="fa-solid fa-circle"></i>Leak alerts to your phone</li><li><i class="fa-solid fa-circle"></i>Weekly quality reports</li><li><i class="fa-solid fa-circle"></i>Tanker and connection booking</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+      <article class="card lift spot svc-card" id="safety" data-cat="safety"><div class="icon-box ic-ind"><i class="fa-solid fa-shield-halved"></i></div><h3>Public safety</h3><p>One-touch SOS, adaptive street lighting and disaster warnings targeted to your street.</p><ul><li><i class="fa-solid fa-circle"></i>SOS with live location share</li><li><i class="fa-solid fa-circle"></i>Flood and heat alerts</li><li><i class="fa-solid fa-circle"></i>Report a faulty streetlight</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+      <article class="card lift spot svc-card" id="health" data-cat="care"><div class="icon-box ic-red"><i class="fa-solid fa-heart-pulse"></i></div><h3>Digital health</h3><p>Book clinics, consult a doctor by video and carry your records securely on your phone.</p><ul><li><i class="fa-solid fa-circle"></i>Same-day clinic booking</li><li><i class="fa-solid fa-circle"></i>Tele-consultation</li><li><i class="fa-solid fa-circle"></i>Vaccination reminders</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+      <article class="card lift spot svc-card" id="governance" data-cat="civic"><div class="icon-box ic-gold"><i class="fa-solid fa-file-signature"></i></div><h3>E-governance</h3><p>Apply for certificates, pay property tax and track grievances with a clear deadline for each.</p><ul><li><i class="fa-solid fa-circle"></i>Paperless certificates</li><li><i class="fa-solid fa-circle"></i>Property and trade tax</li><li><i class="fa-solid fa-circle"></i>Grievance tracker</li></ul><a class="more" href="login.html">Open in my account <i class="fa-solid fa-chevron-right"></i></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. MARKETPLACE -->
+<section class="sec light cut-t cut-br pat-dots" id="marketplace" data-shapes="tri,ring,plus,hex">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>City service marketplace</h2>
+      <p class="lead">Passes, plans and starter kits. Save favourites with the heart, or enquire about any service directly.</p>
+    </div>
+    <div class="grid g3" data-stagger="lr" data-step="90">
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/smart_parking.webp" alt="Smart parking with sensor-guided spaces" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="parking" data-name="Smart Parking Pass" data-price="18" data-icon="fa-square-parking" aria-label="Save Smart Parking Pass to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>Smart Parking Pass</h3><p class="grow">Monthly access to 240 sensor-guided car parks with pay-by-plate exit.</p><div class="meta"><span class="pill">Monthly</span><span class="pill green">Free cancellation</span></div><div class="acts"><div class="price">$18 <small>/ month</small></div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/metro_pass.webp" alt="Metro and bus pass on a connected transport network" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="transit" data-name="Metro and Bus Pass" data-price="32" data-icon="fa-train-subway" aria-label="Save Metro and Bus Pass to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>Metro and Bus Pass</h3><p class="grow">Unlimited rides on every line and route, with instant top-up from your phone.</p><div class="meta"><span class="pill">Monthly</span><span class="pill gold">Best seller</span></div><div class="acts"><div class="price">$32 <small>/ month</small></div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/ev_charging.webp" alt="EV charging at a public charger" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="ev" data-name="EV Charging Plan" data-price="24" data-icon="fa-charging-station" aria-label="Save EV Charging Plan to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>EV Charging Plan</h3><p class="grow">Discounted rates at 900 public chargers, powered by the city's solar grid.</p><div class="meta"><span class="pill">Monthly</span><span class="pill green">Green energy</span></div><div class="acts"><div class="price">$24 <small>/ month</small></div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/home_energy_kit.webp" alt="Home energy kit with smart meter add-on" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="energykit" data-name="Home Energy Kit" data-price="59" data-icon="fa-plug-circle-bolt" aria-label="Save Home Energy Kit to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>Home Energy Kit</h3><p class="grow">Smart meter add-on and app that shows which appliances use the most power.</p><div class="meta"><span class="pill">One time</span><span class="pill gold">Free install</span></div><div class="acts"><div class="price">$59</div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/water_sensor.webp" alt="Water leak sensor pack with battery sensors" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="leak" data-name="Water Leak Sensor Pack" data-price="39" data-icon="fa-faucet-drip" aria-label="Save Water Leak Sensor Pack to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>Water Leak Sensor Pack</h3><p class="grow">Three battery sensors that message you the moment a pipe or tap starts to leak.</p><div class="meta"><span class="pill">One time</span><span class="pill green">2-year battery</span></div><div class="acts"><div class="price">$39</div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+      <article class="card lift prod"><div class="media prod-media"><img class="zoom" src="assets/waste_pickup_plus.webp" alt="Waste pickup plus collection service" width="800" height="500" loading="lazy"><button class="wish" type="button" data-wish data-id="waste" data-name="Waste Pickup Plus" data-price="9" data-icon="fa-recycle" aria-label="Save Waste Pickup Plus to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div><h3>Waste Pickup Plus</h3><p class="grow">Scheduled bulky-item and e-waste collection with reward points for recycling.</p><div class="meta"><span class="pill">Monthly</span><span class="pill green">Earns rewards</span></div><div class="acts"><div class="price">$9 <small>/ month</small></div><a class="btn btn-sm" href="contact.html#form" data-grow="Enquire"><i class="fa-solid fa-paper-plane"></i>Enquire</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROCESS -->
+<section class="sec mesh cut-tr cut-b pat-hex" id="process" data-shapes="ring,diamond,plus,blob">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>From request to result in four steps</h2>
+      <p class="lead">The same simple path for every service, whether you use the web, the app or a service kiosk.</p>
+    </div>
+    <div class="steps" data-stagger="up" data-step="130">
+      <div class="step"><div class="bubble"><i class="fa-solid fa-user-plus"></i><em>1</em></div><h3>Create your account</h3><p>Register with your email and verify your phone in under two minutes.</p></div>
+      <div class="step"><div class="bubble"><i class="fa-solid fa-hand-pointer"></i><em>2</em></div><h3>Choose a service</h3><p>Pick from bills, permits, passes or a request to a city team.</p></div>
+      <div class="step"><div class="bubble"><i class="fa-solid fa-fingerprint"></i><em>3</em></div><h3>Verify and pay</h3><p>Confirm your identity once and pay securely with any method.</p></div>
+      <div class="step"><div class="bubble"><i class="fa-solid fa-location-crosshairs"></i><em>4</em></div><h3>Track to completion</h3><p>Follow progress live and get notified the moment it is done.</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:clamp(36px,5vw,64px)" data-stagger="lr">
+      <div class="card lift"><div class="icon-box"><i class="fa-solid fa-stopwatch"></i></div><h3>Published deadlines</h3><p>Each service shows its promised turnaround, and we report the ones we miss.</p></div>
+      <div class="card lift"><div class="icon-box ic-gold"><i class="fa-solid fa-mobile-screen"></i></div><h3>Works on any phone</h3><p>Full app, mobile web and SMS options, so nobody is left offline.</p></div>
+      <div class="card lift"><div class="icon-box ic-mint"><i class="fa-solid fa-language"></i></div><h3>In your language</h3><p>Available in twelve languages with text-to-speech support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. VIDEO -->
+<section class="sec bg3 cut-t cut-br" id="video" data-shapes="hex,ring,tri,dots">
+  <div class="wrap split rev">
+    <div data-anim="left">
+      <h2>A look inside the data platform</h2>
+      <p class="lead">Every node is a department system. Every pulse is a request, a reading or an approval moving securely across the city network.</p>
+      <div class="grid g2" style="gap:24px 32px;margin-top:8px" data-stagger="up">
+        <div class="stat"><b data-count="180" data-suffix="+">0</b><span>Connected systems</span></div>
+        <div class="stat"><b data-count="99.99" data-dec="2" data-suffix="%">0</b><span>Platform availability</span></div>
+        <div class="stat"><b data-count="1.2" data-dec="1" data-suffix="B">0</b><span>Sensor readings per day</span></div>
+        <div class="stat"><b data-count="0">0</b><span>Personal data sold</span></div>
+      </div>
+    </div>
+    <div class="vid" data-anim="right">
+      <img src="assets/smart_city_network.webp" alt="Animated network of city systems exchanging data">
+      <div class="vid-live"><b></b>Network view</div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section class="sec light cut-tr pat-diag" id="faq" data-shapes="ring,plus,hex,tri">
+  <div class="wrap split" style="align-items:start">
+    <div data-anim="left">
+      <h2>Questions, answered</h2>
+      <p class="lead">Can't find what you need? Our helpline team is available six days a week.</p>
+      <div class="card" style="margin-top:22px"><div class="icon-box ic-gold"><i class="fa-solid fa-headset"></i></div><h3>Talk to a person</h3><p>Helpline 7010792745<br>Mon to Sat, 9:00 to 18:00</p><a class="more" href="contact.html#form">Send us a message <i class="fa-solid fa-chevron-right"></i></a></div>
+    </div>
+    <div data-anim="right">
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="true">Do I need an account to use city services?<i class="fa-solid fa-plus"></i></button><div class="acc-a"><div><p>Public information such as timetables, air quality and outages is open to everyone. A free account is needed to pay bills, apply for permits or save favourites.</p></div></div></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false">How is my personal data protected?<i class="fa-solid fa-plus"></i></button><div class="acc-a"><div><p>Personal data is encrypted in transit and at rest, access is logged, and we never sell it. Sensors measure flows and conditions, not identities.</p></div></div></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false">Can I use services on a basic phone?<i class="fa-solid fa-plus"></i></button><div class="acc-a"><div><p>Yes. Core services are available by SMS and through neighbourhood service kiosks, and the website is designed for slow connections.</p></div></div></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false">How long do applications take?<i class="fa-solid fa-plus"></i></button><div class="acc-a"><div><p>Each service shows its target time. Most certificates are issued the same day, and permits within seven working days.</p></div></div></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false">What if a service fails or I disagree with a decision?<i class="fa-solid fa-plus"></i></button><div class="acc-a"><div><p>Raise a grievance from your dashboard. It is assigned to a named officer and escalated automatically if the deadline is missed.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>

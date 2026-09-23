@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-page="projects">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects | Stackly Smart City</title>
+<meta name="description" content="Explore the Stackly project portfolio: mobility, energy, water, safety, health and green infrastructure with live progress and an interactive city map.">
+<meta name="theme-color" content="#050c1f">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body data-page="projects">
+<div id="loader" class="loader" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="sec p-hero" id="hero" data-shapes="hex,ring,plus,tri" data-circuit>
+  <div class="wrap split">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb" data-anim="down"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a><i class="fa-solid fa-chevron-right sep"></i><span>Projects</span></nav>
+      <h1 data-anim="up" data-d="80">Infrastructure you can <span class="grad">see progress on</span></h1>
+      <p class="lead" data-anim="up" data-d="180">Twelve flagship projects, each with a budget, a timeline and a public progress bar. Follow what is being built in your district.</p>
+      <div class="btn-row" data-anim="up" data-d="280"><a class="btn" href="#portfolio"><i class="fa-solid fa-city"></i>Browse portfolio</a><a class="btn btn-ghost" href="#map"><i class="fa-solid fa-map-location-dot"></i>Open city map</a></div>
+    </div>
+    <div data-anim="zoom" data-d="150"><div data-city data-seed="21" data-tags="fa-train|Metro Line 3|fa-solar-panel|Solar 64%|fa-droplet|Water grid"></div></div>
+  </div>
+</section>
+
+<!-- 2. NUMBERS -->
+<section class="sec bg2 cut-tr cut-br pat-diag" id="numbers" data-shapes="diamond,ring,plus,hex">
+  <div class="wrap split">
+    <div data-anim="left">
+      <h2>Where the investment goes</h2>
+      <p class="lead">A 2026 capital plan of $4.2 billion, published line by line. Mobility and energy take the largest share because they touch the most residents.</p>
+      <div class="grid g2" style="gap:24px 32px;margin-top:10px" data-stagger="up">
+        <div class="stat"><b data-count="4.2" data-dec="1" data-prefix="$" data-suffix="B">0</b><span>Capital plan</span></div>
+        <div class="stat"><b data-count="12">0</b><span>Flagship projects</span></div>
+        <div class="stat"><b data-count="71" data-suffix="%">0</b><span>Average completion</span></div>
+        <div class="stat"><b data-count="38000" data-suffix="+">0</b><span>Jobs supported</span></div>
+      </div>
+    </div>
+    <div class="card" data-anim="right"><div class="panel-h"><h3>Budget by sector ($ millions)</h3></div><div class="chart" id="investChart"></div></div>
+  </div>
+</section>
+
+<!-- 3. PORTFOLIO -->
+<section class="sec mesh cut-tr cut-b pat-hex" id="portfolio" data-shapes="cube,hex,tri,dots">
+  <div class="wrap">
+    <div class="sec-head center" data-anim="up">
+      <h2>The project portfolio</h2>
+      <p class="lead">Filter by sector. Progress bars fill as each card scrolls into view.</p>
+    </div>
+    <div class="tabs center" style="margin-bottom:clamp(28px,4vw,44px)" data-filters="#projGrid" role="group" aria-label="Filter projects" data-anim="up">
+      <button class="tab on" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" type="button" data-filter="mobility" aria-pressed="false"><i class="fa-solid fa-bus"></i>Mobility</button>
+      <button class="tab" type="button" data-filter="energy" aria-pressed="false"><i class="fa-solid fa-bolt"></i>Energy</button>
+      <button class="tab" type="button" data-filter="water" aria-pressed="false"><i class="fa-solid fa-droplet"></i>Water</button>
+      <button class="tab" type="button" data-filter="safety" aria-pressed="false"><i class="fa-solid fa-shield-halved"></i>Safety</button>
+      <button class="tab" type="button" data-filter="care" aria-pressed="false"><i class="fa-solid fa-heart-pulse"></i>Health</button>
+      <button class="tab" type="button" data-filter="green" aria-pressed="false"><i class="fa-solid fa-leaf"></i>Green</button>
+    </div>
+    <div class="grid g3 filterable" id="projGrid" data-stagger="up" data-step="90">
+      <article class="proj" data-cat="mobility"><div class="media"><img class="zoom" src="assets/metro_line.webp" alt="Illustrated metro corridor" width="800" height="500" loading="lazy"><span class="pill">Mobility</span></div><div class="body"><h3>Metro Line 3 corridor</h3><p>Driverless trains linking 14 stations with signal priority.</p><div class="prog"><i style="--v:72%"></i></div><div class="prog-meta"><span>Budget $640M</span><span>72%</span></div></div></article>
+      <article class="proj" data-cat="mobility"><div class="media"><img class="zoom" src="assets/adaptive_signals.webp" alt="Illustrated adaptive signal network" width="800" height="500" loading="lazy"><span class="pill">Mobility</span></div><div class="body"><h3>Adaptive Signals</h3><p>Junction AI that reduces waiting times on 300 arterial roads.</p><div class="prog"><i style="--v:76%"></i></div><div class="prog-meta"><span>Budget $95M</span><span>76%</span></div></div></article>
+      <article class="proj" data-cat="energy"><div class="media"><img class="zoom" src="assets/solar_energy.webp" alt="Illustrated solar panels and wind turbines" width="800" height="500" loading="lazy"><span class="pill gold">Energy</span></div><div class="body"><h3>District Solar Microgrids</h3><p>Community solar and storage for 30 districts.</p><div class="prog"><i style="--v:64%"></i></div><div class="prog-meta"><span>Budget $520M</span><span>64%</span></div></div></article>
+      <article class="proj" data-cat="energy"><div class="media"><img class="zoom" src="assets/smart_meter_roll_out.webp" alt="Illustrated smart meter rollout" width="800" height="500" loading="lazy"><span class="pill gold">Energy</span></div><div class="body"><h3>Smart Meter Rollout</h3><p>1.1 million homes with hourly usage and outage alerts.</p><div class="prog"><i style="--v:55%"></i></div><div class="prog-meta"><span>Budget $180M</span><span>55%</span></div></div></article>
+      <article class="proj" data-cat="water"><div class="media"><img class="zoom" src="assets/smart_water_pipelines.webp" alt="Illustrated water grid" width="800" height="500" loading="lazy"><span class="pill">Water</span></div><div class="body"><h3>Smart Water Grid</h3><p>Acoustic leak sensors across 3,000 km of mains.</p><div class="prog"><i style="--v:69%"></i></div><div class="prog-meta"><span>Budget $310M</span><span>69%</span></div></div></article>
+      <article class="proj" data-cat="safety"><div class="media"><img class="zoom" src="assets/safe_streets_netwrk.webp" alt="Illustrated safety shield" width="800" height="500" loading="lazy"><span class="pill ind">Safety</span></div><div class="body"><h3>Safe Streets Network</h3><p>Adaptive lighting, SOS points and coordinated dispatch.</p><div class="prog"><i style="--v:80%"></i></div><div class="prog-meta"><span>Budget $210M</span><span>80%</span></div></div></article>
+      <article class="proj" data-cat="care"><div class="media"><img class="zoom" src="assets/digital_health_hub.webp" alt="Illustrated digital health hub" width="800" height="500" loading="lazy"><span class="pill red">Health</span></div><div class="body"><h3>Digital Health Hub</h3><p>Shared records and tele-care for 60 neighbourhood clinics.</p><div class="prog"><i style="--v:58%"></i></div><div class="prog-meta"><span>Budget $260M</span><span>58%</span></div></div></article>
+      <article class="proj" data-cat="green"><div class="media"><img class="zoom" src="assets/urban_forest_belt.webp" alt="Illustrated urban forest" width="800" height="500" loading="lazy"><span class="pill green">Green</span></div><div class="body"><h3>Urban Forest Belt</h3><p>Two million trees and cool corridors across the city.</p><div class="prog"><i style="--v:47%"></i></div><div class="prog-meta"><span>Budget $140M</span><span>47%</span></div></div></article>
+      <article class="proj" data-cat="mobility safety"><div class="media"><img class="zoom" src="assets/citizen_service_portal.webp" alt="Illustrated civic service portal" width="800" height="500" loading="lazy"><span class="pill">Platform</span></div><div class="body"><h3>Citizen Service Portal</h3><p>One account for permits, taxes, certificates and grievances.</p><div class="prog"><i style="--v:91%"></i></div><div class="prog-meta"><span>Budget $120M</span><span>91%</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FEATURED -->
+<section class="sec light cut-t cut-br pat-dots" id="featured" data-shapes="tri,ring,plus,hex">
+  <div class="wrap split">
+    <div data-anim="left">
+      <span class="tag"><i class="fa-solid fa-star"></i>Featured project</span>
+      <h2>The Integrated Command Centre</h2>
+      <p class="lead">One operations floor where traffic, power, water, emergency and weather teams see the same live picture and act together.</p>
+      <div style="display:grid;gap:18px;margin-top:8px">
+        <div><div class="prog-meta" style="margin:0 0 6px"><span style="color:var(--head);font-weight:700">Phase 1: Control room and data links</span><span>100%</span></div><div class="prog" data-anim="zoom"><i style="--v:100%"></i></div></div>
+        <div><div class="prog-meta" style="margin:0 0 6px"><span style="color:var(--head);font-weight:700">Phase 2: Predictive analytics</span><span>82%</span></div><div class="prog" data-anim="zoom" data-d="150"><i style="--v:82%"></i></div></div>
+        <div><div class="prog-meta" style="margin:0 0 6px"><span style="color:var(--head);font-weight:700">Phase 3: Public transparency wall</span><span>45%</span></div><div class="prog" data-anim="zoom" data-d="300"><i style="--v:45%"></i></div></div>
+      </div>
+      <div class="btn-row" style="margin-top:28px"><a class="btn" href="#map"><i class="fa-solid fa-map-location-dot"></i>See it on the map</a><a class="btn btn-ghost" href="contact.html#visit"><i class="fa-solid fa-person-walking"></i>Book a visit</a></div>
+    </div>
+    <div data-anim="right">
+      <div class="split-media">
+        <div class="tilt card" style="padding:14px"><div class="media fr-hex ar-1" style="max-width:520px;margin:auto"><img class="zoom" src="assets/command_centre.webp" alt="Illustrated skyline linked to the command centre" width="1200" height="800" loading="lazy"></div></div>
+        <div class="badge-float bf-2"><i class="fa-solid fa-display"></i><div><b>96 screens</b><small>Live city wall</small></div></div>
+        <div class="badge-float bf-1"><i class="fa-solid fa-users-gear"></i><div><b>7 teams</b><small>One shared view</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MAP -->
+<section class="sec bg3 cut-tr cut-b pat-grid" id="map" data-shapes="hex,ring,diamond,dots">
+  <div class="wrap">
+    <div class="sec-head" data-anim="up">
+      <h2>Interactive city map</h2>
+      <p class="lead">Tap or hover a marker to see what is being built there. This is a stylised diagram of the city, not to scale.</p>
+    </div>
+    <div class="mapbox" data-anim="zoom">
+      <svg class="map" viewBox="0 0 800 480" role="img" aria-label="Stylised map of Stackly districts with project markers" preserveAspectRatio="xMidYMid meet">
+        <path class="river" d="M-20 340 C 120 280, 250 390, 420 330 S 700 260, 820 310"/>
+        <ellipse class="park" cx="150" cy="120" rx="86" ry="48"/><rect class="park" x="590" y="360" width="140" height="80" rx="26"/><ellipse class="park" cx="700" cy="120" rx="60" ry="36"/>
+        <rect class="blk" x="60" y="200" width="90" height="60" rx="8"/><rect class="blk" x="180" y="190" width="120" height="70" rx="8"/><rect class="blk" x="330" y="90" width="110" height="80" rx="8"/><rect class="blk" x="470" y="80" width="90" height="60" rx="8"/><rect class="blk" x="330" y="200" width="140" height="70" rx="8"/><rect class="blk" x="500" y="190" width="110" height="80" rx="8"/><rect class="blk" x="640" y="200" width="100" height="70" rx="8"/><rect class="blk" x="80" y="390" width="130" height="60" rx="8"/><rect class="blk" x="250" y="410" width="120" height="50" rx="8"/><rect class="blk" x="420" y="390" width="130" height="60" rx="8"/>
+        <path class="rd" d="M0 180 H800"/><path class="rd" d="M0 285 H800"/><path class="rd" d="M310 0 V480"/><path class="rd" d="M620 0 V480"/><path class="rd2" d="M160 0 V480"/><path class="rd2" d="M470 0 V480"/><path class="rd2" d="M0 90 H800"/><path class="rd2" d="M0 380 H800"/>
+        <path class="route" d="M40 285 L310 285 L310 180 L620 180 L620 285 L780 285"/>
+        <rect class="area-bg" x="34" y="40" width="118" height="30" rx="15"/><text class="area-tag" x="93" y="60">Old Town</text>
+        <rect class="area-bg" x="640" y="40" width="128" height="30" rx="15"/><text class="area-tag" x="704" y="60">Greenfield</text>
+        <rect class="area-bg" x="400" y="112" width="170" height="30" rx="15"/><text class="area-tag" x="485" y="132">Innovation District</text>
+        <rect class="area-bg" x="548" y="404" width="142" height="30" rx="15"/><text class="area-tag" x="619" y="424">Harbour Ward</text>
+        <rect class="area-bg" x="222" y="352" width="132" height="30" rx="15"/><text class="area-tag" x="288" y="372">Riverside</text>
+      </svg>
+      <div class="pin" style="left:38%;top:59%;--pc:#38d5f5"><button type="button" aria-label="Metro Line 3 corridor"><i class="fa-solid fa-train"></i></button><div class="tip"><b>Metro Line 3 corridor</b>14 stations, 72% complete</div></div>
+      <div class="pin" style="left:76%;top:23%;--pc:#ffc857"><button type="button" aria-label="District Solar Microgrids"><i class="fa-solid fa-solar-panel"></i></button><div class="tip"><b>Solar Microgrid, North</b>Community solar, 64% complete</div></div>
+      <div class="pin" style="left:52%;top:68%;--pc:#7b8cff"><button type="button" aria-label="Smart Water Grid"><i class="fa-solid fa-droplet"></i></button><div class="tip"><b>Smart Water Grid</b>Riverside leak sensors live</div></div>
+      <div class="pin" style="left:78%;top:59%;--pc:#ff6b8a"><button type="button" aria-label="Safe Streets Network"><i class="fa-solid fa-shield-halved"></i></button><div class="tip"><b>Safe Streets Network</b>Adaptive lighting 80% complete</div></div>
+      <div class="pin" style="left:18%;top:78%;--pc:#5eead4"><button type="button" aria-label="Digital Health Hub"><i class="fa-solid fa-heart-pulse"></i></button><div class="tip"><b>Digital Health Hub</b>Clinics being connected</div></div>
+      <div class="pin" style="left:19%;top:25%;--pc:#4ade80"><button type="button" aria-label="Urban Forest Belt"><i class="fa-solid fa-tree"></i></button><div class="tip"><b>Urban Forest Belt</b>Planting phase 2 underway</div></div>
+      <div class="pin" style="left:48%;top:38%;--pc:#fff"><button type="button" aria-label="Command Centre"><i class="fa-solid fa-tower-broadcast"></i></button><div class="tip"><b>Command Centre</b>Civic Square, open for visits</div></div>
+      <div class="map-legend"><span><i style="--c:#38d5f5"></i>Mobility</span><span><i style="--c:#ffc857"></i>Energy</span><span><i style="--c:#7b8cff"></i>Water</span><span><i style="--c:#ff6b8a"></i>Safety</span><span><i style="--c:#4ade80"></i>Green</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. UPDATES -->
+<section class="sec mesh cut-t pat-diag" id="updates" data-shapes="plus,ring,tri,hex">
+  <div class="wrap">
+    <div class="sec-head" data-anim="up">
+      <h2>News and project updates</h2>
+      <p class="lead">Announcements, tenders and service notices from the authority.</p>
+    </div>
+    <div class="grid g2" data-stagger="lr" data-step="120">
+      <article class="card lift news-card"><div class="media"><img class="zoom" src="assets/metro_line-projects (1).webp" alt="Illustrated metro train" width="800" height="500" loading="lazy"></div><div class="body"><time><i class="fa-solid fa-calendar-days"></i>14 September 2026</time><h3>Metro Line 3 reaches the airport corridor</h3><p>Tunnelling is complete on the northern section, six months ahead of the original programme.</p><a class="more" href="404.html">Read update <i class="fa-solid fa-chevron-right"></i></a></div></article>
+      <article class="card lift news-card"><div class="media"><img class="zoom" src="assets/solar_microgrids-projects.webp" alt="Illustrated solar farm" width="800" height="500" loading="lazy"></div><div class="body"><time><i class="fa-solid fa-calendar-days"></i>2 September 2026</time><h3>Solar microgrid powers 40,000 homes</h3><p>Battery storage now covers the evening peak in all northern districts.</p><a class="more" href="404.html">Read update <i class="fa-solid fa-chevron-right"></i></a></div></article>
+      <article class="card lift news-card"><div class="media"><img class="zoom" src="assets/leak_sensors_-projects.webp" alt="Illustrated water droplet" width="800" height="500" loading="lazy"></div><div class="body"><time><i class="fa-solid fa-calendar-days"></i>26 August 2026</time><h3>Leak sensors save 12 million litres</h3><p>Acoustic sensors flagged 214 hidden leaks in their first quarter of operation.</p><a class="more" href="404.html">Read update <i class="fa-solid fa-chevron-right"></i></a></div></article>
+      <article class="card lift news-card"><div class="media"><img class="zoom" src="assets/data_center.webp" alt="Illustrated civic building" width="800" height="500" loading="lazy"></div><div class="body"><time><i class="fa-solid fa-calendar-days"></i>11 August 2026</time><h3>Open tender: district data hubs</h3><p>Local firms are invited to bid on edge data centres. Bids close on 30 October.</p><a class="more" href="404.html">Read update <i class="fa-solid fa-chevron-right"></i></a></div></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/pages.js"></script>
+</body>
+</html>
